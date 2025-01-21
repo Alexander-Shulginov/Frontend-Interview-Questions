@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-    title: 'Frontend-Q',
+    title: 'Frontend Interview Question',
     srcDir: 'src',
-    description: 'A VitePress Site',
+    description: 'Frontend Interview Question',
+    head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/assets/icons/logo.svg' }]],
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
@@ -36,5 +37,10 @@ export default defineConfig({
         },
 
         socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
+
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright © 2025',
+        },
     },
 });
