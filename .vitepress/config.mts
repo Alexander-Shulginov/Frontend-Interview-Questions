@@ -1,10 +1,22 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-    title: 'Frontend Interview Question',
-    srcDir: 'src',
+    title: 'Frontend-IQ',
+    srcDir: 'docs',
     description: 'Frontend Interview Question',
     head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/assets/icons/logo.svg' }]],
+    locales: {
+        root: {
+            label: 'English',
+            lang: 'en',
+            link: '/en/',
+        },
+        ru: {
+            label: 'Русский',
+            lang: 'ru', 
+            link: '/ru/',
+        },
+    },
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
@@ -12,7 +24,6 @@ export default defineConfig({
             { text: 'TS', link: '/ts/' },
             { text: 'JS', link: '/js/' },
         ],
-
         sidebar: {
             '/vue/': [
                 {
