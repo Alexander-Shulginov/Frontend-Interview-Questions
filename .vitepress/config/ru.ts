@@ -1,7 +1,7 @@
 export const ru = {
     themeConfig: {
         nav: [
-            { text: 'Home', link: '/ru/' },
+            { text: 'Home', link: '/' },
             { text: 'Css', link: '/ru/css/' },
         ],
 
