@@ -12,7 +12,7 @@ export default defineConfig({
         root: {
             label: 'Русский',
             lang: 'ru',
-            link: '/',
+            // link: '/',
             ...ru,
         },
         en: {
