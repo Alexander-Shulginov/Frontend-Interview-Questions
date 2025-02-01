@@ -2,7 +2,7 @@ export const ru = {
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Css', link: '/ru/css/' },
+            { text: 'Css', link: '/guide/css/' },
         ],
 
         socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
