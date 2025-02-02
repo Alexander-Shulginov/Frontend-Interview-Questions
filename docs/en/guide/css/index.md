@@ -7,9 +7,9 @@ title: CSS
 
 :::details What is the Box Model?
 
-> A concept that defines the structure and behavior of elements on a web page.
+The concept that defines the structure and behavior of elements on a page.
 
-Structurally, every element on a page consists of:
+Structurally, each element on the page consists of:
 
 -   Content
 -   Padding
@@ -18,98 +18,138 @@ Structurally, every element on a page consists of:
 
 ---
 
-The size of elements is calculated based on the `box-sizing` property value.  
-With `content-box`, only width and height are considered, excluding padding and borders. This behavior can be counterintuitive, as the actual size will not match the one displayed in devtools.  
-The `border-box` property calculates element sizes by including width, height, padding, and borders, solving the issues of the `content-box` property.
+The element's size is calculated based on the `box-sizing` property.  
+With `content-box`, only width and height are considered, excluding padding and borders, which can be counterintuitive since the actual size will not match the size shown in DevTools.  
+The `border-box` property includes width, height, padding, and borders in calculations, solving the `content-box` issue.
 
 ---
 
-> By default, all elements on the page are divided into block and inline elements.
+By default, all elements on the page are either block or inline.
 
-Block elements:
+Block:
 
--   Take up the full available width
--   Stack on top of each other
--   Can have width and height explicitly set
+-   Occupy the full available width
+-   Are positioned one below the other
+-   Can have width and height set
 
-Inline elements:
+Inline:
 
--   Flow next to each other
--   Their width and height are defined by their content and cannot be explicitly set
--   Vertical padding and margins will not work
+-   Are positioned next to each other
+-   Width and height are defined by the content and cannot be set directly
+-   Vertical padding and margins do not work
 
-Inline-block elements:
+Inline-block:
 
--   Flow next to each other
--   Can have width and height explicitly set
--   Vertical and horizontal padding and margins will be applied
+-   Are positioned next to each other
+-   Can have width and height set
+-   Padding and margins apply properly
 
 :::
-:::details What is specificity?
 
-> Specificity determines the priority with which styles will be applied to an element.
+:::details What is Specificity?
 
-CSS provides various ways to style elements, including:
+Specificity determines the priority of styles applied to an element.
+
+CSS provides multiple ways to style elements, including:
 
 -   By tag
 -   By class
 -   By attribute
 -   Inline styles
 
-If an element is styled using multiple methods, specificity calculates the _weight_ of applied styles.  
+If multiple styles are applied to an element, specificity calculates the _weight_ of each rule.  
 The `!important` rule overrides specificity, applying styles regardless of specificity, inheritance, etc.
 
 :::
 
-:::details What is inheritance?
+:::details What is Inheritance?
 
-Inheritance allows child elements to apply properties from their parent elements.  
-By default, properties related to typography, such as `font-size`, `color`, and `line-height`, are inherited.
+The ability of child elements to inherit styles from their parent elements.
+By default, only typographic properties like `font-size`, `color`, `line-height`, etc., are inherited.
 
-To control inheritance, the `inherit` value can be used to explicitly inherit properties.  
-For the `color` property, the `currentColor` keyword allows direct inheritance of the parent's color.
+The `inherit` property allows explicit inheritance of styles.  
+For the `color` property, `currentColor` enables direct inheritance of the parent’s color.
 
-`!important` ignores inheritance by applying styles without considering the inheritance rules.
+`!important` ignores inheritance and forces styles to apply without considering the cascade.
 
 :::
 
-:::details What is the cascade?
+:::details What is the Cascade?
 
-> The mechanism that determines from which source and under what rules styles will be applied to elements on the page.
+A mechanism that determines which styles are applied to elements based on their origin and priority.
 
 Sources of styles:
 
--   Browser styles with `!important`
+-   Browser default styles with `!important`
 -   Inline styles with `!important`
 -   Styles from animations and transitions (`animation`, `transition`)
 -   Regular inline styles
 -   Styles from external `.css` files
 -   Browser default styles
 
-Besides the origin of styles, the cascade also considers specificity and inheritance.
+In addition to the source, the cascade also considers specificity and inheritance.
 
 :::
 
-:::details How does stacking context work?
+:::details What is the Stacking Context?
 
-> Controls how elements are layered on top of each other along the Z-axis.
+It controls how elements overlap and are positioned along the Z-axis.
 
 A stacking context is created when:
 
--   An element has a non-static position (`position: absolute`, `position: relative`, `position: fixed`)
--   The `z-index` property is set to a non-auto value (`z-index: 1`)
--   Certain properties like `opacity`, `transform`, or `filter` are applied
+-   The element is positioned (`absolute`, `relative`, `fixed`)
+-   The `z-index` property is set to a value other than `auto`
+-   Properties like `opacity`, `transform`, or `filter` are applied
 
-To manage the stacking order, the `z-index` property is used.  
-An element with a higher `z-index` value will appear "above" others.
+The `z-index` property controls the stacking order, with higher values appearing above lower ones.
 
-Within each stacking context, the rendering order of layers is as follows:
+Inside each stacking context, the rendering order is:
 
-1. Background (`background`) and borders (`border`)
-2. Elements with a `z-index` less than 0
-3. Block elements (`display: block;`)
-4. Floating elements (`float`)
-5. Inline elements (`display: inline`)
-6. Elements with `opacity` less than 1
-7. Elements with `z-index` greater than 0
+1. Background and borders
+1. Elements with `z-index` < 0
+1. Block elements (`display: block;`)
+1. Floating elements (`float`)
+1. Inline elements (`display: inline`)
+1. Elements with `opacity` < 1
+1. Elements with `z-index` > 0
    :::
+
+:::details What is a Selector?
+
+A pattern used to target elements on the page.
+
+Types of selectors:
+
+-   Universal selector `*` - selects all elements except pseudo-elements `::before`, `::after`
+-   Tag selector `div`, `p`, `a`
+-   Class selector `.nav`, `.button--primary`
+-   ID selector `#sidebar`, `#item`
+-   Attribute selector `[checked]`, `[type='button']`
+
+Selector combinations:
+
+-   _Grouping_ `.title, h3, .link__text` - selects multiple elements
+-   _Combining_ `div.nav.nav__item` - selects elements that match all specified selectors
+-   _Descendant_ `li a` - selects the last selector if inside the first
+-   _Direct child_ `section > h3` - applies styles only if `h3` is a direct child of `section`
+-   _Adjacent sibling_ `label + input` - applies styles if elements are on the same level
+-   _General sibling_ `span ~ span.color--accent` - applies styles to all matching elements on the same level
+
+Overusing selector combinations is bad practice since it depends on document structure. If elements move, combined selectors may break.
+
+:::
+
+:::details What is Document Flow?
+
+The document flow controls the positioning of elements on the page.
+
+By default, elements are placed in the _normal flow_:  
+Block elements are positioned one below the other and take up the full width, while inline elements are positioned next to each other with width defined by content.
+
+An element can be removed from normal flow using `position: absolute;` or `position: fixed;`.
+
+Similarly, `float: left;` removes an element from the normal flow, allowing text to wrap around it.
+
+With `display: flex;` or `display: grid;`, the parent element manages positioning, ignoring the normal flow.
+
+:::
