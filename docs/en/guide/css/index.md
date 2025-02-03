@@ -153,3 +153,18 @@ Similarly, `float: left;` removes an element from the normal flow, allowing text
 With `display: flex;` or `display: grid;`, the parent element manages positioning, ignoring the normal flow.
 
 :::
+
+:::details What are media queries?
+
+Media queries allow a webpage to adapt to different types of devices it may be viewed on.
+
+They enable styling based on:
+
+- device width and height,
+- horizontal or vertical orientation,
+- dark or light theme,
+- pixel density,
+- screen aspect ratio,
+- presence of touch input.
+
+:::

@@ -3,6 +3,7 @@ export const ru = {
         nav: [
             { text: 'Home', link: '/' },
             { text: 'Css', link: '/guide/css/' },
+            { text: 'Vue', link: '/guide/vue/' },
         ],
 
         socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
