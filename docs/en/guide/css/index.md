@@ -160,11 +160,42 @@ Media queries allow a webpage to adapt to different types of devices it may be v
 
 They enable styling based on:
 
-- device width and height,
-- horizontal or vertical orientation,
-- dark or light theme,
-- pixel density,
-- screen aspect ratio,
-- presence of touch input.
+-   device width and height,
+-   horizontal or vertical orientation,
+-   dark or light theme,
+-   pixel density,
+-   screen aspect ratio,
+-   presence of touch input.
+
+:::
+
+:::details What are Pseudo-Elements?
+
+Pseudo-elements are special elements created via CSS that do not exist in the DOM, meaning they cannot be accessed via JavaScript.  
+They are often used for visual effects or overlays.
+
+List of pseudo-elements:
+
+-   `::before`, `::after` — the most common ones, adding a pseudo-element before or after a real element.
+-   `::placeholder` — used for styling placeholder text.
+-   `::selection` — allows styling the text selection color.
+-   `::first-letter`, `::first-line` — style the first letter and the first line of text.
+
+:::
+
+:::details What are Pseudo-Classes?
+
+Pseudo-classes are used to style the state of elements on the page.  
+Elements can be in states like:
+
+-   Hovered `:hover`
+-   Focused `:focus-visible`
+-   Disabled `:disabled`
+-   Pressed `:active`
+-   Links can be visited `:visited`
+-   Checkboxes can be checked `:checked`
+-   Empty `:empty`
+
+There are also two special groups of pseudo-classes: `nth-child` and `nth-of-type`.
 
 :::
