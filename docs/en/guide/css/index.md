@@ -199,3 +199,30 @@ Elements can be in states like:
 There are also two special groups of pseudo-classes: `nth-child` and `nth-of-type`.
 
 :::
+:::details What are nth-child and nth-of-type used for?
+
+These are pseudo-classes that allow us to target child elements conveniently.
+
+They allow us to:
+
+-   Target the first or last element in a list: `:first-child`, `:last-child`
+-   Target even or odd elements in a list: `:nth-child(odd)`, `nth-child(even)`
+-   Select elements in a specified order: `nth-child(3n)` will select every 3rd element
+-   Select elements in a specified order with a starting point: `nth-child(3n + 2)` will select every 3rd element starting from the 2nd element
+
+`nth-child` and `nth-of-type` have the same functionality for selecting elements. The difference is that `nth-child` works with any type of child elements, while `nth-of-type` only targets elements of a specific type.
+
+:::
+
+:::details Explain the different methods of positioning elements on a page?
+
+By default, in the standard document flow, elements are arranged according to the rules of the box model, with block elements stacked vertically and inline elements laid out horizontally, etc. The `position` property for such elements is `static`.
+
+For relative positioning, `position: relative;` is used. With this property, you can adjust the position of an element using `top`, `right`, `bottom`, `left`. The unique feature of relative positioning is that the element does not leave the document flow, and the space it originally occupied is preserved.
+
+For absolute positioning, `position: absolute;` is used for the element to be positioned, and `position` can be set to `relative`, `absolute`, or `fixed` for the container in which the element is positioned. An absolutely positioned element is removed from the document flow and can overlap other elements.
+
+For fixed positioning, `position: fixed;` is used. An element with this property is positioned relative to the browser window and remains in place when scrolling the page. Fixed positioning is commonly used for site headers, "back to top" buttons, and widgets.
+
+For sticky positioning, `position: sticky;` is used, which combines both relative and fixed positioning. By default, a sticky element behaves like a relatively positioned element. As the page is scrolled, it behaves like a fixed element, sticking to the screen. Once the container containing the sticky element is scrolled past, the element will return to behaving as a relatively positioned element.
+:::
