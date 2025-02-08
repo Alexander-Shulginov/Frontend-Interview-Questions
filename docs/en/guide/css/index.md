@@ -226,3 +226,24 @@ For fixed positioning, `position: fixed;` is used. An element with this property
 
 For sticky positioning, `position: sticky;` is used, which combines both relative and fixed positioning. By default, a sticky element behaves like a relatively positioned element. As the page is scrolled, it behaves like a fixed element, sticking to the screen. Once the container containing the sticky element is scrolled past, the element will return to behaving as a relatively positioned element.
 :::
+
+:::details Why Are Vendor Prefixes Needed?
+
+Vendor prefixes allow browsers to support non-standardized or experimental CSS properties.
+
+If a CSS rule is implemented in a browser but not yet stabilized in the specification, a prefix is added:
+
+-   `-webkit` - for browsers using the WebKit/Blink engine (Chrome, Opera, Edge, Yandex Browser)
+-   `-moz` - for Firefox
+-   `-o` - for Opera (< version 12)
+-   `-ms` - for Microsoft Explorer (< version 11)
+
+Typically, vendor prefixes are not added manually but are handled automatically by Autoprefixer.
+
+:::
+
+:::details What is margin collapsing?
+
+**Margin collapsing** occurs when one element has `margin-bottom` set and the element below it has `margin-top` set. The spacing between these elements will not be summed but will be equal to the larger of the two values.
+
+:::
