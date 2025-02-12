@@ -247,3 +247,26 @@ Typically, vendor prefixes are not added manually but are handled automatically 
 **Margin collapsing** occurs when one element has `margin-bottom` set and the element below it has `margin-top` set. The spacing between these elements will not be summed but will be equal to the larger of the two values.
 
 :::
+
+:::details **What can you tell about CSS units?**
+
+In CSS, measurement units are divided into absolute and relative.
+
+### Absolute units:
+
+-   Pixels (`px`) — the most precise unit of measurement.
+-   Besides pixels, there are other units like millimeters (`mm`), centimeters (`cm`), inches (`in`), points (`pt`), and picas (`pc`). However, they are rarely used since they are internally converted to pixels.
+
+### Relative units:
+
+-   `em` — calculates size based on the font size of the parent element. Not recommended for usage in `font-size` as it can cause uncontrolled scaling in nested elements.
+-   `rem` — calculates size relative to the root `html` element's font size, which defaults to `16px`.
+-   `%` — calculates size relative to the parent element:
+    -   `width`, `height`, `padding`, `margin` — relative to the parent's `width`/`height`.
+    -   `font-size`, `line-height` — relative to the parent's `font-size`.
+    -   `top`, `right`, `bottom`, `left` — relative to the positioned parent.
+-   `vh` — calculates size relative to the viewport height. Works inconsistently on mobile due to system UI overlays.
+-   `vw` — calculates size relative to the viewport width.
+-   `vmin`, `vmax` — calculate size relative to the smallest/largest viewport dimension.
+-   `dvh`, `svh`, `lvh` — take system UI overlays into account on mobile devices, serving as modern replacements for `vh`.  
+    :::
