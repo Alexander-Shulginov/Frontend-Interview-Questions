@@ -269,4 +269,11 @@ In CSS, measurement units are divided into absolute and relative.
 -   `vw` — calculates size relative to the viewport width.
 -   `vmin`, `vmax` — calculate size relative to the smallest/largest viewport dimension.
 -   `dvh`, `svh`, `lvh` — take system UI overlays into account on mobile devices, serving as modern replacements for `vh`.  
-    :::
+:::
+
+:::details How does the `visibility` property work, and how is it different from `display: none`?
+
+The `visibility` property visually hides an element from the page, making it invisible. Such an element cannot be focused, and event handlers will not trigger.  
+`display: none;` completely removes the element from the DOM tree.
+
+:::
