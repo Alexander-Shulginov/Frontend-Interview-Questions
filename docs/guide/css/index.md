@@ -8,7 +8,8 @@ title: CSS
 
 <!-- @include: ./parts/base.md -->
 
----
+<!-- @include: ./parts/fonts.md -->
+
 ### Core Concepts
 :::details Что такое блочная модель?
 
