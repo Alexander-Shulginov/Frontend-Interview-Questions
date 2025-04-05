@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: CSS
+prev: false
+next: false
 ---
 
 # CSS

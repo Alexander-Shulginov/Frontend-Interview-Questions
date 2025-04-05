@@ -12,5 +12,9 @@ export const en = {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2025',
         },
+        outline: {
+            level: 'deep',
+            label: 'Content',
+        },
     },
 };

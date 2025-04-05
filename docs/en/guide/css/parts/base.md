@@ -98,12 +98,12 @@ Typically, vendor prefixes are not added manually but are handled automatically 
 
 In CSS, measurement units are divided into absolute and relative.
 
-### Absolute units:
+**Absolute units**
 
 -   Pixels (`px`) — the most precise unit of measurement.
 -   Besides pixels, there are other units like millimeters (`mm`), centimeters (`cm`), inches (`in`), points (`pt`), and picas (`pc`). However, they are rarely used since they are internally converted to pixels.
 
-### Relative units:
+**Relative units**
 
 -   `em` — calculates size based on the font size of the parent element. Not recommended for usage in `font-size` as it can cause uncontrolled scaling in nested elements.
 -   `rem` — calculates size relative to the root `html` element's font size, which defaults to `16px`.

@@ -12,5 +12,9 @@ export const ru = {
             message: 'Выпущено под лицензией MIT.',
             copyright: 'Авторские права © 2025',
         },
+        outline: {
+            level: 'deep',
+            label: 'Содержимое',
+        },
     },
 };
